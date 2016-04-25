@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+
+  get "movies" => "movies#index"
+
+
+
+# Returning to our objective, when the router receives a GET request for /movies, we want a listing of movie titles to get sent back to the user's browser. The router's role in that process is simply to call some Ruby code we write to handle the request. In Rails parlance, the router calls an action (a Ruby method) that's defined in a controller (a Ruby class). The syntax for adding a route is a bit unorthodox, so here's a reminder of the generic format:
+
+# verb "url" => "name_of_controller#name_of_action"
+# The stuff on the left-hand side of the => identifies what the request looks like and the stuff on the right-hand side identifies the code to run to handle that request. We know what the request looks like, but what should we use as the names on the right-hand side?
+
+# Because we want a listing of movies, by convention the name of the controller will be movies and the name of the action will be index. We'll actually create those a bit later, but for now it's enough just to know their names.
+# rails generate controller movies
+# Note that the generator takes the name of the controller, which by convention should be plural. In this case, we want a controller named "movies".
+
+  ########################
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
